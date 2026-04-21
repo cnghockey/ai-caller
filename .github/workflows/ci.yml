@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-examples:
+    name: Lint examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bash syntax (curl.sh)
+        run: bash -n examples/curl.sh
+
+      - name: Python syntax (python.py)
+        run: python3 -m py_compile examples/python.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: TypeScript syntax (typescript.ts)
+        run: |
+          npm install --no-save typescript@5 @types/node@20
+          npx tsc --noEmit --skipLibCheck \
+                  --target es2022 \
+                  --module nodenext --moduleResolution nodenext \
+                  --types node \
+                  examples/typescript.ts
