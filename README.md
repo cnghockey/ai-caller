@@ -13,7 +13,7 @@ Search terms: *ai voice agent api, ai voice ai api, ai calling api, ai phone age
 ## What makes it different
 
 - **Push-back on ambiguity.** Before dialing, the agent checks if your task has enough info. If not (e.g., "book an appointment" without a date), it returns clarification questions. You answer, the call proceeds. No wasted minutes on doomed calls.
-- **Pay-per-call deposit billing.** Deposit for N minutes upfront, get unused time refunded to a Lightning address automatically. A 3-minute US call costs around 150–250 sats.
+- **Pay-per-call deposit billing.** Deposit for N minutes upfront, get unused time refunded to a Lightning address automatically. The price varies by destination and duration, and the first request returns the exact amount as a Lightning invoice.
 - **Any language.** en-US, es-ES, fr-FR, hi-IN, yo-NG, zh-CN — full Unicode range, not just the big-five. Useful when your caller, your callee, or your task is in an underserved language.
 - **Auto-retry on voicemail / busy / no-answer.** Up to 3 attempts, included in the deposit. The poll endpoint shows retry progress.
 - **Full transcript on failure.** If the agent couldn't complete the task, you get the transcript, call analysis, and disconnection reason — enough to adjust the task and retry with a new payment.
@@ -111,7 +111,7 @@ See [examples/](examples/) for complete runnable scripts in curl, Python, and Ty
 
 - **Deposit model.** You specify `duration_minutes` (1–30). Invoice is sized for telephony + AI minutes upfront.
 - **Refund.** When the call ends, actual duration is measured server-side. Unused sats are refunded automatically to the Lightning address in `refund_address`. If omitted, the refund is claimable via a returned bolt11 invoice.
-- **Indicative rates.** A typical 3-minute US call: ~150–250 sats. Destination-country rate variation applies.
+- **Rates.** The price varies by destination country and duration, so no fixed total is published. The invoice in the first 402 response is the exact amount.
 - **Failure path.** If the task fails (IVR maze, destination unreachable, misunderstanding), the full call cost still applies but you get the transcript + analysis so a follow-up attempt can be more specific.
 
 See [/api/estimate-cost](https://sats4ai.com/api/estimate-cost) to price a call before paying.
