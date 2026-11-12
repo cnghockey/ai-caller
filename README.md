@@ -6,8 +6,6 @@
 
 A compound **voice agent API** that bundles AI reasoning, PSTN calling, speech-to-text, text-to-speech, automatic retry, and transcript analysis into one HTTP endpoint. Useful for AI outbound calling, AI appointment booking, AI bill negotiation, IVR navigation, and any task where an agent needs to pick up a phone. Built on Sats4AI's L402 payment protocol — pay for the minutes you use, unused deposit auto-refunds to a Lightning address.
 
-Search terms: *ai voice agent api, ai voice ai api, ai calling api, ai phone agent, outbound calling api, pay per call ai, voice ai, conversational ai api, mcp voice tool, l402 voice api*.
-
 ---
 
 ## What makes it different
@@ -196,36 +194,3 @@ Not this time? That's cool too. We've been there. A star on the repo is a free h
 ## License
 
 MIT — see [LICENSE](LICENSE).
-
-<details>
-<summary>Repository setup (for maintainers)</summary>
-
-```bash
-gh repo create cnghockey/ai-caller --public --source=. \
-  --description "AI voice agent API — give your agent a phone, pay per call with Bitcoin Lightning. No signup, no subscription. MCP-native. Alternative to Vapi, Retell, Bland." \
-  --homepage "https://sats4ai.com" \
-  --push
-
-gh repo edit cnghockey/ai-caller \
-  --add-topic ai-voice-agent \
-  --add-topic voice-ai-api \
-  --add-topic ai-phone-agent \
-  --add-topic ai-calling \
-  --add-topic outbound-calling \
-  --add-topic conversational-ai \
-  --add-topic telephony \
-  --add-topic mcp \
-  --add-topic model-context-protocol \
-  --add-topic l402 \
-  --add-topic lightning-network \
-  --add-topic bitcoin \
-  --add-topic pay-per-use \
-  --add-topic no-signup \
-  --add-topic voice-agent \
-  --add-topic ai-api \
-  --add-topic vapi-alternative \
-  --add-topic retell-alternative \
-  --add-topic bland-alternative
-```
-
-</details>
