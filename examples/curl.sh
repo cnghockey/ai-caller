@@ -8,12 +8,12 @@
 #     (e.g., Alby, Phoenix, Zeus, LNBits)
 #
 # Usage:
-#   PHONE="+14155552671" TASK="Call and confirm reservation for 6pm" ./curl.sh
+#   PHONE="+14155550123" TASK="Call and confirm reservation for 6pm" ./curl.sh
 
 set -euo pipefail
 
 ENDPOINT="${ENDPOINT:-https://sats4ai.com/api/l402/ai-call}"
-PHONE="${PHONE:?set PHONE in E.164 format, e.g. +14155552671}"
+PHONE="${PHONE:?set PHONE in E.164 format, e.g. +14155550123}"
 TASK="${TASK:?set TASK as the instruction for the AI agent}"
 DURATION="${DURATION:-3}"
 LANGUAGE="${LANGUAGE:-en-US}"

@@ -7,7 +7,7 @@
  * (Alby, Phoenix, Zeus, LNBits, etc.), then paste the preimage when prompted.
  *
  * Usage:
- *   npx tsx typescript.ts --phone +14155552671 --task "Confirm reservation for 6pm"
+ *   npx tsx typescript.ts --phone +14155550123 --task "Confirm reservation for 6pm"
  */
 
 import * as readline from "node:readline/promises";
@@ -93,7 +93,7 @@ function parseArgs(): CallBody {
     const phone = get("--phone");
     const task = get("--task");
     if (!phone || !task) {
-        console.error("Usage: --phone +14155552671 --task \"...\" [--duration-minutes 5] [--language en-US] [--refund-address alice@getalby.com]");
+        console.error("Usage: --phone +14155550123 --task \"...\" [--duration-minutes 5] [--language en-US] [--refund-address alice@getalby.com]");
         process.exit(1);
     }
     const body: CallBody = { phone_number: phone, task, duration_minutes: 3, language: "en-US" };

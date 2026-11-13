@@ -8,7 +8,7 @@ Pay the returned invoice with any Lightning wallet that gives you a preimage
 (Alby, Phoenix, Zeus, LNBits, etc.), then paste the preimage when prompted.
 
 Usage:
-    python python.py --phone +14155552671 --task "Confirm reservation for 6pm"
+    python python.py --phone +14155550123 --task "Confirm reservation for 6pm"
 """
 
 from __future__ import annotations

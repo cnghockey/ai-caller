@@ -45,7 +45,7 @@ Your agent then calls `ai-call` with the same fields shown below.
 curl -i -X POST https://sats4ai.com/api/l402/ai-call \
   -H "Content-Type: application/json" \
   -d '{
-    "phone_number": "+14155552671",
+    "phone_number": "+14155550123",
     "task": "Call Dr. Smith'\''s office and book the earliest available appointment for a routine checkup. My name is Alice Jones, phone 415-555-0199. Flexible on date but prefer mornings.",
     "duration_minutes": 5,
     "language": "en-US",
@@ -130,7 +130,7 @@ See [/api/estimate-cost](https://sats4ai.com/api/estimate-cost) to price a call 
 
 | Field | Required | Example |
 |---|---|---|
-| `phone_number` | yes | `"+14155552671"` (E.164) |
+| `phone_number` | yes | `"+14155550123"` (E.164) |
 | `task` | yes | `"Call Dr. Smith's office and book the earliest appointment..."` |
 | `duration_minutes` | no | `5` (default 3, range 1–30) |
 | `voice` | no | `"Adrian"` |
